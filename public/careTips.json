@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Watering Tips",
+    "icon": "💧",
+    "description": "Water your plants only when the top inch of soil feels dry. Avoid overwatering to prevent root rot.",
+    "bg": "from-blue-500/20 to-cyan-400/10"
+  },
+  {
+    "id": 2,
+    "title": "Sunlight Needs",
+    "icon": "☀️",
+    "description": "Place your plants in bright, indirect sunlight. Avoid direct sun for too long as it can burn leaves.",
+    "bg": "from-yellow-400/20 to-amber-300/10"
+  },
+  {
+    "id": 3,
+    "title": "Fertilizing Guide",
+    "icon": "🌿",
+    "description": "Feed your plants once every 2–4 weeks using organic fertilizer during the growing season.",
+    "bg": "from-green-400/20 to-emerald-300/10"
+  }
+]

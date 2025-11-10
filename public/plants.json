@@ -1,0 +1,155 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy, low-maintenance plant that purifies indoor air and thrives even in low light.",
+    "image": "/snackplant.png",
+    "providerName": "UrbanGreen Studio",
+    "careTips": [
+      "Water sparingly, allow soil to dry between watering.",
+      "Place in indirect sunlight.",
+      "Tolerates low light and neglect."
+    ]
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering Plant",
+    "price": 25,
+    "rating": 4.6,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "Elegant white blooms with lush green leaves. Perfect for bedrooms and offices.",
+    "image": "/PeaceLily.webp",
+    "providerName": "GreenAura Nursery",
+    "careTips": [
+      "Keep in bright, indirect light.",
+      "Water once a week.",
+      "Avoid overwatering."
+    ]
+  },
+  {
+    "plantId": 3,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 15,
+    "rating": 4.7,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "One of the best beginner-friendly plants that helps clean indoor air efficiently.",
+    "image": "/spiderplant.png",
+    "providerName": "Leaf & Love",
+    "careTips": [
+      "Keep in bright, indirect light.",
+      "Water when top inch of soil is dry.",
+      "Trim brown tips as needed."
+    ]
+  },
+  {
+    "plantId": 4,
+    "plantName": "Aloe Vera",
+    "category": "Medicinal Plant",
+    "price": 20,
+    "rating": 4.9,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A healing succulent that requires minimal care and bright indirect light.",
+    "image": "/alovera.webp",
+    "providerName": "Nature's Touch",
+    "careTips": [
+      "Place in bright indirect sunlight.",
+      "Water sparingly every 2-3 weeks.",
+      "Use well-draining soil."
+    ]
+  },
+  {
+    "plantId": 5,
+    "plantName": "Monstera Deliciosa",
+    "category": "Decorative",
+    "price": 45,
+    "rating": 4.9,
+    "availableStock": 5,
+    "careLevel": "Medium",
+    "description": "A statement tropical plant with large split leaves that add jungle vibes to interiors.",
+    "image": "/MonsteraDeliciosa.png",
+    "providerName": "GreenGlow Plants",
+    "careTips": [
+      "Keep in bright, indirect light.",
+      "Water when top 2 inches of soil is dry.",
+      "Support climbing stems with a moss pole."
+    ]
+  },
+  {
+    "plantId": 6,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 30,
+    "rating": 4.8,
+    "availableStock": 9,
+    "careLevel": "Easy",
+    "description": "Tolerates neglect, drought, and low light — perfect for busy plant lovers.",
+    "image": "/ZZ.png",
+    "providerName": "Evergreen Hub",
+    "careTips": [
+      "Place in low to bright indirect light.",
+      "Water every 2-3 weeks.",
+      "Avoid overwatering and soggy soil."
+    ]
+  },
+  {
+    "plantId": 7,
+    "plantName": "Pothos (Money Plant)",
+    "category": "Trailing Plant",
+    "price": 12,
+    "rating": 4.5,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "Fast-growing, easy-to-care trailing plant that looks great in hanging pots.",
+    "image": "/Pothos.webp",
+    "providerName": "LeafyLife Store",
+    "careTips": [
+      "Keep in bright, indirect light.",
+      "Water when soil feels dry.",
+      "Trim long vines to encourage bushiness."
+    ]
+  },
+  {
+    "plantId": 8,
+    "plantName": "Areca Palm",
+    "category": "Air Purifier",
+    "price": 40,
+    "rating": 4.7,
+    "availableStock": 7,
+    "careLevel": "Medium",
+    "description": "An elegant palm that adds a tropical feel and improves air quality naturally.",
+    "image": "/ArecaPalm.webp",
+    "providerName": "PureGreen Co.",
+    "careTips": [
+      "Keep in bright indirect light.",
+      "Water regularly, keep soil slightly moist.",
+      "Avoid cold drafts."
+    ]
+  },
+  {
+    "plantId": 9,
+    "plantName": "Rubber Plant",
+    "category": "Decorative",
+    "price": 28,
+    "rating": 4.6,
+    "availableStock": 6,
+    "careLevel": "Medium",
+    "description": "Glossy dark green leaves make this plant a bold statement piece for your home.",
+    "image": "/RubberPlant.webp",
+    "providerName": "Botanic Bliss",
+    "careTips": [
+      "Place in bright, indirect light.",
+      "Water weekly, let soil dry slightly between watering.",
+      "Wipe leaves to keep them dust-free."
+    ]
+  }
+]

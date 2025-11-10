@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Lina Greenfield",
+    "role": "Indoor Plant Specialist",
+    "image": "/expert1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Arjun Patel",
+    "role": "Succulent Care Expert",
+    "image": "/expert2.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Maya Fern",
+    "role": "Soil & Fertilizer Consultant",
+    "image": "/expert3.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Daniel Bloom",
+    "role": "Plant Aesthetic Designer",
+    "image": "/expert4.jpeg"
+  }
+]
