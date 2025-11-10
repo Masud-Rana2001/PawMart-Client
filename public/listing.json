@@ -6,7 +6,7 @@
     "price": "0",
     "location": "Dhaka",
     "description": "A playful and energetic 3-month-old Golden Retriever puppy. Fully vaccinated and ready for a loving home.",
-    "image": "/images/recent/golden_puppy.jpg",
+    "image": "https://i.ibb.co.com/k6zq238G/download.jpg",
     "email": "owner1@example.com",
     "date": "2025-11-08"
   },
@@ -17,7 +17,7 @@
     "price": "0",
     "location": "Rangpur",
     "description": "A gentle and well-behaved 6-month-old Siamese kitten. Litter trained and very affectionate.",
-    "image": "/images/recent/siamese_kitten.jpg",
+    "image": "https://i.ibb.co.com/pjfLqdRC/download-1.jpg",
     "email": "owner2@example.com",
     "date": "2025-11-03"
   },
@@ -28,7 +28,7 @@
     "price": "0",
     "location": "Rajshahi",
     "description": "A 1-year-old Beagle mix, great with kids and loves long walks.",
-    "image": "/images/pets/beagle_mix.jpg",
+    "image": "https://i.ibb.co.com/fVG054Gn/download-2.jpg",
     "email": "owner3@example.com",
     "date": "2025-11-09"
   },
@@ -39,7 +39,7 @@
     "price": "0",
     "location": "Chittagong",
     "description": "Two beautiful, singing love birds looking for a caring owner.",
-    "image": "/images/pets/love_birds.jpg",
+    "image": "https://i.ibb.co.com/tpMQZ1LS/download-3.jpg",
     "email": "owner4@example.com",
     "date": "2025-11-07"
   },
@@ -50,7 +50,7 @@
     "price": "0",
     "location": "Sylhet",
     "description": "A 2-year-old female Persian cat, very fluffy and litter trained.",
-    "image": "/images/pets/persian_cat.jpg",
+    "image": "https://i.ibb.co.com/zhC290R7/download-4.jpg",
     "email": "owner5@example.com",
     "date": "2025-11-06"
   },
@@ -61,7 +61,7 @@
     "price": "0",
     "location": "Khulna",
     "description": "A friendly golden hamster, perfect for a first-time pet owner.",
-    "image": "/images/pets/hamster.jpg",
+    "image": "https://i.ibb.co.com/jkCkW9Cq/download-5.jpg",
     "email": "owner6@example.com",
     "date": "2025-11-05"
   },
@@ -72,7 +72,7 @@
     "price": "3500",
     "location": "Chittagong",
     "description": "High-protein, grain-free dry food made with real salmon. Ideal for medium to large adult dogs.",
-    "image": "/images/recent/salmon_kibble.jpg",
+    "image": "https://i.ibb.co.com/1Y5GC3RV/download-6.jpg",
     "email": "shopA@example.com",
     "date": "2025-11-07"
   },
@@ -83,7 +83,7 @@
     "price": "2800",
     "location": "Dhaka",
     "description": "Complete and balanced nutrition with real tuna pieces.",
-    "image": "/images/food/tuna_cans.jpg",
+    "image": "https://i.ibb.co.com/2Yg6FP3m/download-7.jpg",
     "email": "shopB@example.com",
     "date": "2025-11-06"
   },
@@ -94,7 +94,7 @@
     "price": "750",
     "location": "Rajshahi",
     "description": "Soft and chewy treats, great for reward-based training.",
-    "image": "/images/food/training_bites.jpg",
+    "image": "https://i.ibb.co.com/N24BVd0T/download-8.jpg",
     "email": "shopC@example.com",
     "date": "2025-11-05"
   },
@@ -105,7 +105,7 @@
     "price": "1100",
     "location": "Khulna",
     "description": "Healthy, oven-baked biscuits for dogs with meat sensitivities.",
-    "image": "/images/food/veg_biscuits.jpg",
+    "image": "https://i.ibb.co.com/ksX567pF/download-9.jpg",
     "email": "shopD@example.com",
     "date": "2025-11-04"
   },
@@ -116,7 +116,7 @@
     "price": "950",
     "location": "Barisal",
     "description": "Fiber-rich food essential for rabbit digestive health.",
-    "image": "/images/food/rabbit_pellets.jpg",
+    "image": "https://i.ibb.co.com/pB6YDmZ7/download-10.jpg",
     "email": "shopE@example.com",
     "date": "2025-11-03"
   },
@@ -127,7 +127,7 @@
     "price": "1600",
     "location": "Dhaka",
     "description": "Complete food source for orphaned or nursing puppies.",
-    "image": "/images/food/milk_replacer.jpg",
+    "image": "https://i.ibb.co.com/ynSBwgJx/download-11.jpg",
     "email": "shopF@example.com",
     "date": "2025-11-02"
   },
@@ -138,7 +138,7 @@
     "price": "1250",
     "location": "Khulna",
     "description": "Soft, washable, and cozy donut-shaped bed, perfect for deep sleep. Available in grey.",
-    "image": "/images/recent/cat_bed.jpg",
+    "image": "https://i.ibb.co.com/KzD13MwD/download-12.jpg",
     "email": "shopB@example.com",
     "date": "2025-11-06"
   },
@@ -149,7 +149,7 @@
     "price": "350",
     "location": "Dhaka",
     "description": "Durable nylon collar with reflective stitching for visibility.",
-    "image": "/images/accessories/dog_collar.jpg",
+    "image": "https://i.ibb.co.com/jX0dCrG/images-1.jpg",
     "email": "shopG@example.com",
     "date": "2025-11-08"
   },
@@ -160,7 +160,7 @@
     "price": "990",
     "location": "Sylhet",
     "description": "Heavy-duty retractable leash with anti-slip handle.",
-    "image": "/images/accessories/retractable_leash.jpg",
+    "image": "https://i.ibb.co.com/ksRgNZD4/download-13.jpg",
     "email": "shopH@example.com",
     "date": "2025-11-07"
   },
@@ -171,7 +171,7 @@
     "price": "2500",
     "location": "Dhaka",
     "description": "Ventilated, lightweight carrier for small cats or toy dogs.",
-    "image": "/images/accessories/pet_carrier.jpg",
+    "image": "https://i.ibb.co.com/SXgRcFgw/download-14.jpg",
     "email": "shopI@example.com",
     "date": "2025-11-05"
   },
@@ -182,7 +182,7 @@
     "price": "4500",
     "location": "Chittagong",
     "description": "Programmable feeder for controlled portion sizes and scheduled feeding.",
-    "image": "/images/accessories/auto_feeder.jpg",
+    "image": "https://i.ibb.co.com/Lz3jP0Kw/download-15.jpg",
     "email": "shopJ@example.com",
     "date": "2025-11-04"
   },
@@ -193,7 +193,7 @@
     "price": "1500",
     "location": "Rangpur",
     "description": "Stylish yellow raincoat to keep your dog dry on walks.",
-    "image": "/images/accessories/raincoat.jpg",
+    "image": "https://i.ibb.co.com/C5rHGfRV/download-16.jpg",
     "email": "shopK@example.com",
     "date": "2025-11-03"
   },
@@ -204,7 +204,7 @@
     "price": "680",
     "location": "Sylhet",
     "description": "Essential liquid vitamin supplement to boost immunity and feather quality in pet birds.",
-    "image": "/images/recent/bird_vitamin.jpg",
+    "image": "https://i.ibb.co.com/8LQxnRJV/download-17.jpg",
     "email": "shopC@example.com",
     "date": "2025-11-05"
   },
@@ -215,7 +215,7 @@
     "price": "1300",
     "location": "Dhaka",
     "description": "Safe and effective solution for immediate parasite protection.",
-    "image": "/images/care/flea_spray.jpg",
+    "image": "https://i.ibb.co.com/GQVVtj0P/download-18.jpg",
     "email": "shopL@example.com",
     "date": "2025-11-09"
   },
@@ -226,7 +226,7 @@
     "price": "850",
     "location": "Khulna",
     "description": "Easy way to clean teeth and freshen breath by adding to drinking water.",
-    "image": "/images/care/dental_additive.jpg",
+    "image": "https://i.ibb.co.com/KzRj0wNy/download-19.jpg",
     "email": "shopM@example.com",
     "date": "2025-11-08"
   },
@@ -237,7 +237,7 @@
     "price": "700",
     "location": "Chittagong",
     "description": "Soothing shampoo for sensitive or itchy skin. Hypoallergenic formula.",
-    "image": "/images/care/oatmeal_shampoo.jpg",
+    "image": "https://i.ibb.co.com/ZRHF2tyG/download-20.jpg",
     "email": "shopN@example.com",
     "date": "2025-11-07"
   },
@@ -259,7 +259,7 @@
     "price": "550",
     "location": "Rangpur",
     "description": "Effective brush for removing loose hair and tangles from long-haired pets.",
-    "image": "/images/care/slicker_brush.jpg",
+    "image": "https://i.ibb.co.com/cc0wvV7p/download-21.jpg",
     "email": "shopP@example.com",
     "date": "2025-11-05"
   },
@@ -303,7 +303,7 @@
     "price": "1150",
     "location": "Chittagong",
     "description": "Large, collapsible tunnel for hide-and-seek and exercise.",
-    "image": "/images/toys/cat_tunnel.jpg",
+    "image": "https://i.ibb.co.com/gMCLwFG2/download-22.jpg",
     "email": "shopS@example.com",
     "date": "2025-11-01"
   },

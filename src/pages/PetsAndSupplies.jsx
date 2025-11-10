@@ -1,26 +1,82 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import ListingCard from './home/ListingCard';
+import Loading from "./Loading";
 
 export default function PetsAndSupplies() {
   const [category, setCategory] = useState("All");
   const [listing, setListing] = useState([]);
+  const [page, setPage] = useState(1);
+  const [hasPage, setHasPage] = useState(true);
+  const loadingRef = useRef(null)
+
+  const [searchTerm,setSearchTerm] = useState('')
+
+  const fetchingData = async (pageNum =1,categoryValue = category,searchValue =searchTerm) => {
+   
+    const res = await fetch(`http://localhost:3000/allList?page=${pageNum}&category=${categoryValue}&search=${searchValue}&limit=6`);
+    const data = await res.json();
+    if (data.data.length === 0) {
+      setHasPage(false)
+    } else {
+     
+      setListing(prev => pageNum ===1 ? data.data : [...prev,...data.data])
+    }
+  }
+  useEffect(() => {
+
+    const onIntersectionFn = (items) => {
+      const loaderItem = items[0];
+      if (loaderItem.isIntersecting && hasPage) {
+        setPage(prev =>prev+1)
+      }
+    }
+    const observer = new IntersectionObserver(onIntersectionFn);
+    if (observer && loadingRef.current) {
+      observer.observe(loadingRef.current)
+    }
+    return ()=> observer.disconnect()
+      
+  }, [hasPage])
+  
+
+  useEffect(() =>{
+    fetchingData(page)
+  }, [page])
+  
 
   useEffect(() => {
-    fetch('/listing.json')
-      .then(res => res.json())
-      .then(data => setListing(data))
-  },[])
+    setPage(1);
+    setHasPage(true)
+    fetchingData(1,category,searchTerm)
+  },[category,searchTerm])
+ 
 
 
-  const filtered = category === "All" ? listing : listing.filter(p => p.category === category);
+  const filtered = listing.filter(item => {
+  const matchCategory = category === "All" || item.category === category;
+  const matchSearch = item.name?.toLowerCase().includes(searchTerm.toLowerCase());
+  return matchCategory && matchSearch;
+});
 
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-[#0a0a0a] py-16 transition-colors duration-300">
+    <section className="min-h-screen py-10 bg-gradient-to-r from-sky-200 via-cyan-300 to-sky-400 
+      dark:from-sky-900 dark:via-sky-950 dark:to-cyan-950 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-emerald-700 dark:text-amber-400 mb-8 text-center">
           🐾 Pets & Supplies
         </h2>
+        {/* search box  */}
+        <div className="flex justify-center mb-6">
+          <input
+            type="text"
+            placeholder="🔍 Search pets or items..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full sm:w-96 px-4 py-2 border border-emerald-500 rounded-full focus:outline-none 
+                      focus:ring-2 focus:ring-emerald-500 dark:bg-gray-800 bg-gray-500 dark:text-gray-100"
+          />
+        </div>
 
         {/* Filter */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -45,6 +101,9 @@ export default function PetsAndSupplies() {
             <ListingCard key={item._id} listing={item} />
           ))}
         </div>
+        {
+          hasPage && <Loading ref={ loadingRef} />
+        }
       </div>
     </section>
   );

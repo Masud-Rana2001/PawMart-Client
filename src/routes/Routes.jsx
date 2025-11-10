@@ -10,7 +10,7 @@ import Loading from './../pages/Loading';
 import PlantDetailts from '../pages/PlantDetailts';
 import PrivateRoutes from './PrivateRoutes';
 import PrivateLayout from '../layouts/PrivateLayout';
-import IndorPlantsSection from './../components/IndorPlantsSection';
+
 import MyProfile from './../pages/MyProfile';
 import About from './../pages/About';
 import Contact from '../pages/Contact';

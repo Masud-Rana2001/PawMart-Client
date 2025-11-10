@@ -1,32 +1,57 @@
-import { useRef ,useState} from "react";
+import { useRef ,useState,useEffect,useContext} from "react";
+import { useParams } from 'react-router';
+import AuthContext from "../contexts/AuthContext";
+import { toast } from 'react-toastify';
 
 export default function ListingDetails() {
-  const [isOpen, setIsOpen]  = useState(false)
+  const {id} = useParams()
+  const [listing, setListing]  = useState({})
   const modalRef = useRef(null)
+
+  const { currentUser } = useContext(AuthContext);
+ console.log(currentUser)
+  useEffect(() => {
+    fetch(`http://localhost:3000/allList/${id}`)
+    .then(res => res.json())
+    .then(data => {
+      setListing(data)
+      
+      })
+  },[id])
+
   
-  // Example data (তুমি props বা fetch দিয়ে আনতে পারো)
-  const listing = {
-    id: "PET-1023",
-    name: "Golden Retriever Puppy",
-    category: "Pets",
-    ownerEmail: "owner@example.com",
-    description:
-      "A friendly and playful golden retriever puppy, 3 months old, fully vaccinated and healthy.",
-    price: 20000,
-    location: "Dhaka, Bangladesh",
-    img: "/dog.jpg",
-  };
 
-  // Example user (auth context থেকে অটো আসবে)
-  const user = {
-    name: "Masud Rana",
-    email: "masud@example.com",
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit =  (e) => {
     e.preventDefault();
-    alert("Order submitted successfully!");
-    setIsOpen(false);
+    const data = {
+      buyerName: currentUser.displayName,
+      buyerEmail: currentUser.email,
+      productId: listing._id,
+      productName: listing.name,
+      quantity: e.target.quantity.value,
+      price: listing.price,
+      address: e.target.address.value,
+      date: e.target.date.value,
+      phone: e.target.phone.value,
+      notes :e.target.notes.value
+    }
+     fetch("http://localhost:3000/orders", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+     })
+       .then(res => res.json())
+      .then(result => {
+        toast.success("Order placed successfully!");
+        console.log(result)
+        modalRef.current.close();
+        e.target.reset()
+      })
+       .catch(err => {
+        console.log(err)
+         toast.error("Something went wrong!")
+       }
+       );  
   };
 
   return (
@@ -38,7 +63,7 @@ export default function ListingDetails() {
         <div className="grid md:grid-cols-2">
           {/* Image */}
           <img
-            src={listing.img}
+            src={listing.image}
             alt={listing.name}
             className="w-full h-full object-cover"
           />
@@ -57,7 +82,7 @@ export default function ListingDetails() {
 
             <div className="space-y-2 text-gray-600 dark:text-gray-300">
               <p>
-                <strong>Owner’s Email:</strong> {listing.ownerEmail}
+                <strong>Owner’s Email:</strong> {listing.email}
               </p>
               <p>
                 <strong>Location:</strong> {listing.location}
@@ -97,7 +122,7 @@ export default function ListingDetails() {
                   Buyer Name
                 </label>
                 <input
-                  value={user.name}
+                  value={currentUser.displayName}
                   readOnly
                   className="w-full mt-1 p-2 rounded-md border text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
                 />
@@ -108,7 +133,7 @@ export default function ListingDetails() {
                   Email
                 </label>
                 <input
-                  value={user.email}
+                  value={currentUser.email}
                   readOnly
                   className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
                 />
@@ -120,7 +145,7 @@ export default function ListingDetails() {
                     Product ID
                   </label>
                   <input
-                    value={listing.id}
+                    value={listing._id}
                     readOnly
                     className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
                   />
@@ -139,16 +164,18 @@ export default function ListingDetails() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium  text-gray-700 dark:text-gray-50 text-gray-600 dark:text-gray-300">
+                  <label className="block text-sm font-medium  text-gray-700 dark:text-gray-50 ">
                     Quantity
                   </label>
-                  <input
-                    value={listing.category === "Pets" ? 1 : ""}
-                    readOnly={listing.category === "Pets"}
-                    type="number"
-                    placeholder="Enter quantity"
-                    className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
-                  />
+                   <input
+                      name="quantity"
+                      type="number"
+                      placeholder="Enter quantity"
+                      defaultValue={listing.category === "Pets" ? 1 : ""}
+                      readOnly={listing.category === "Pets"}
+                      required
+                      className="w-full mt-1 p-2 rounded-md border text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
+                    />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
@@ -167,7 +194,8 @@ export default function ListingDetails() {
                   Address
                 </label>
                 <textarea
-                  required
+                    required
+                    name="address"
                   className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
                   placeholder="Your full address"
                 ></textarea>
@@ -178,7 +206,8 @@ export default function ListingDetails() {
                   <label className="block text-sm font-medium  text-gray-700 dark:text-gray-50 text-gray-600 dark:text-gray-300">
                     Pick Up Date
                   </label>
-                  <input
+                    <input
+                      name="date"
                     type="date"
                     required
                     className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
@@ -189,7 +218,8 @@ export default function ListingDetails() {
                     Phone
                   </label>
                   <input
-                    type="tel"
+                      type="tel"
+                      name="phone"
                     required
                     placeholder="Enter phone number"
                     className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
@@ -201,7 +231,8 @@ export default function ListingDetails() {
                 <label className="block text-sm font-medium text-gray-600 dark:text-gray-300">
                   Additional Notes
                 </label>
-                <textarea
+                  <textarea
+                    name="notes"
                   className="w-full mt-1 p-2 rounded-md border  text-gray-700 dark:text-gray-50 border-gray-300 dark:border-gray-700 dark:bg-gray-800"
                   placeholder="Any special request..."
                 ></textarea>
@@ -210,7 +241,7 @@ export default function ListingDetails() {
               <div className="flex justify-between mt-6">
                 <button
                   type="button"
-                  onClick={() => setIsOpen(false)}
+                  onClick={()=>modalRef.current.close()}
                   className="px-4 py-2 bg-gray-700  dark:bg-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600 transition"
                 >
                   Cancel

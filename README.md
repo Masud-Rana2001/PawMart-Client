@@ -77,8 +77,13 @@ JWT_SECRET=your_strong_secret
 # Client
 npm run dev
 
-# Server
+
+
+ Server
 npm start
+
+
+---
 
 
 💡 Bonus Features
