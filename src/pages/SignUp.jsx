@@ -109,11 +109,11 @@ const SignUp = () => {
           </Field>
           {/* SignUp Text */}
                     <Field>
-                      <p className="text-emerald-200 text-sm text-center">
+                      <p className="text-emerald-600 text-sm text-center">
                         Already have an account?{" "}
                         <Link
                           to="/auth/signin"
-                          className="text-emerald-400 hover:text-emerald-300 hover:underline font-semibold"
+                          className="text-emerald-800 hover:text-emerald-300 hover:underline font-semibold"
                         >
                           Sign In
                         </Link>
@@ -123,7 +123,7 @@ const SignUp = () => {
                     {/* OR Divider */}
                     <div className="flex items-center justify-center my-6">
                       <div className="flex-grow h-px bg-emerald-800/50"></div>
-                      <span className="mx-3 text-emerald-300/80 text-sm font-medium">or</span>
+                      <span className="mx-3 text-emerald-800/80 text-sm font-medium">or</span>
                       <div className="flex-grow h-px bg-emerald-800/50"></div>
                     </div>
           
@@ -131,7 +131,7 @@ const SignUp = () => {
                     <button
                      onClick={handleGoogleLogin}
                       type="button"
-                      className="w-full flex items-center justify-center gap-3 btn bg-white/10 hover:bg-gray-900 text-emerald-100 hover:text-emerald-300 font-semibold py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                      className="w-full flex items-center justify-center gap-3 btn bg-white/10 hover:bg-gray-900 text-emerald-500 hover:text-emerald-300 font-semibold py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                     >
                       <img
                         src="https://www.svgrepo.com/show/475656/google-color.svg"

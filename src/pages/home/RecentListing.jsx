@@ -5,11 +5,11 @@ function RecentListing() {
   const [listing, setListing] = useState([]);
 
   useEffect(() => {
-    fetch('/listing.json')
+    fetch('http://localhost:3000/allListing')
       .then(res => res.json())
-      .then(data => setListing(data))
+      .then(data => setListing(data.data))
   },[])
-  const latestListings = listing.slice(8, 14);
+  const latestListings = listing.slice(4, 10);
 
   console.log(latestListings)
 

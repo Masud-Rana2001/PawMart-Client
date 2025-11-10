@@ -19,10 +19,6 @@ function HomePage() {
       <AdoptAwareness />
       <PetHeroes/>
       
-      {/* <PlantOfTheWeek/>
-      <PlantCareTips />
-      <MeetOurExperts />
-      <EcoDecoridea/> */}
     </>
   )
 }

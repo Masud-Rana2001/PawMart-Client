@@ -2,10 +2,11 @@ import { useRef ,useState,useEffect,useContext} from "react";
 import { useParams } from 'react-router';
 import AuthContext from "../contexts/AuthContext";
 import { toast } from 'react-toastify';
+import Loading from "./Loading";
 
 export default function ListingDetails() {
   const {id} = useParams()
-  const [listing, setListing]  = useState({})
+  const [listing, setListing]  = useState(null)
   const modalRef = useRef(null)
 
   const { currentUser } = useContext(AuthContext);
@@ -53,7 +54,7 @@ export default function ListingDetails() {
        }
        );  
   };
-
+    if(!listing) return <Loading/>
   return (
     <section
       className="min-h-screen flex items-center justify-center py-16 px-4 bg-gradient-to-r from-sky-200 via-cyan-300 to-sky-400 

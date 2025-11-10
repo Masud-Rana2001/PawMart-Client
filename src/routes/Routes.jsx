@@ -18,6 +18,9 @@ import PrivacyPolicy from '../pages/PrivacyPolicy';
 import Error from '../pages/Error';
 import PetsAndSupplies from './../pages/PetsAndSupplies';
 import ListingDetails from '../pages/ListingDetails';
+import MyOrders from '../pages/MyOrders';
+import MyListings from '../pages/MyListing';
+import CreateListing from '../pages/CreateListing';
 
 
 
@@ -75,13 +78,20 @@ const router = createBrowserRouter([
     errorElement:<Error/>,
     children: [
       {
-        path: '/myprofile',
-        element: <MyProfile />
+        path: '/myorders',
+        element: <MyOrders />
       },
       {
         path: "/pets-and-supplies/:id",
         element: <ListingDetails/>
       },
+      {
+        path: "/mylisting/",
+        element: <MyListings/>
+      }, {
+        path: "/createListing",
+        element : <CreateListing/>
+      }
     ]
   }, {
     path:"*",

@@ -17,20 +17,26 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-emerald-100 via-emerald-50 to-green-100 dark:from-emerald-800 dark:via-emerald-900 dark:to-green-900 p-4 transition-colors duration-300">
+    <div className="min-h-screen flex items-center justify-center 
+      bg-gradient-to-r from-sky-200 via-cyan-300 to-sky-400 
+      dark:from-sky-900 dark:via-sky-950 dark:to-cyan-950 
+      p-4 transition-colors duration-300">
+      
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-md bg-white/90 dark:bg-gray-900/80 rounded-2xl shadow-2xl p-8 border border-gray-200 dark:border-gray-700 transition-all duration-300 backdrop-blur-md"
+        className="w-full max-w-md bg-white/90 dark:bg-gray-900/80 
+        rounded-2xl shadow-2xl p-8 border border-cyan-200 
+        dark:border-cyan-800 transition-all duration-300 backdrop-blur-md"
       >
-        {/* Header */}
         <fieldset className="border-none">
-          <legend className="text-3xl font-bold text-emerald-800 dark:text-emerald-300 mb-8 text-center">
+          <legend className="text-3xl font-bold text-sky-800 
+          dark:text-cyan-300 mb-8 text-center">
             Get in Touch
           </legend>
 
-          {/* Name Field */}
+          {/* Name */}
           <div className="mb-5">
-            <label className="block text-emerald-700 dark:text-emerald-200 mb-2 text-sm font-semibold">
+            <label className="block text-sky-700 dark:text-cyan-200 mb-2 text-sm font-semibold">
               Name :
             </label>
             <input
@@ -39,14 +45,17 @@ function Contact() {
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-emerald-300 dark:border-emerald-700 rounded-lg bg-white/80 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 placeholder-emerald-400 dark:placeholder-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all"
+              className="w-full px-4 py-2 border border-sky-300 dark:border-cyan-700 
+              rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
+              placeholder-sky-400 dark:placeholder-cyan-500 focus:outline-none 
+              focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all"
               required
             />
           </div>
 
-          {/* Email Field */}
+          {/* Email */}
           <div className="mb-5">
-            <label className="block text-emerald-700 dark:text-emerald-200 mb-2 text-sm font-semibold">
+            <label className="block text-sky-700 dark:text-cyan-200 mb-2 text-sm font-semibold">
               Email :
             </label>
             <input
@@ -55,14 +64,17 @@ function Contact() {
               placeholder="example@gmail.com"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-emerald-300 dark:border-emerald-700 rounded-lg bg-white/80 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 placeholder-emerald-400 dark:placeholder-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all"
+              className="w-full px-4 py-2 border border-sky-300 dark:border-cyan-700 
+              rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
+              placeholder-sky-400 dark:placeholder-cyan-500 focus:outline-none 
+              focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all"
               required
             />
           </div>
 
-          {/* Message Field */}
+          {/* Message */}
           <div className="mb-5">
-            <label className="block text-emerald-700 dark:text-emerald-200 mb-2 text-sm font-semibold">
+            <label className="block text-sky-700 dark:text-cyan-200 mb-2 text-sm font-semibold">
               Message :
             </label>
             <textarea
@@ -70,34 +82,40 @@ function Contact() {
               placeholder="Write your message here..."
               value={formData.message}
               onChange={handleChange}
-              className="w-full h-32 px-4 py-2 border border-emerald-300 dark:border-emerald-700 rounded-lg bg-white/80 dark:bg-emerald-900/30 text-emerald-900 dark:text-emerald-100 placeholder-emerald-400 dark:placeholder-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all resize-none"
+              className="w-full h-32 px-4 py-2 border border-sky-300 dark:border-cyan-700 
+              rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
+              placeholder-sky-400 dark:placeholder-cyan-500 focus:outline-none 
+              focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all resize-none"
               required
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white font-semibold py-2 rounded-lg shadow-md hover:shadow-lg focus:ring-4 focus:ring-emerald-400 transition-all duration-300"
+            className="w-full bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 
+            dark:hover:bg-cyan-400 text-white font-semibold py-2 rounded-lg 
+            shadow-md hover:shadow-lg focus:ring-4 focus:ring-cyan-400 
+            transition-all duration-300"
           >
             Send Message
           </button>
 
           {/* Divider */}
           <div className="flex items-center justify-center my-6">
-            <div className="flex-grow h-px bg-emerald-300 dark:bg-emerald-700/50"></div>
-            <span className="mx-3 text-emerald-500 dark:text-emerald-300 text-sm font-medium">or</span>
-            <div className="flex-grow h-px bg-emerald-300 dark:bg-emerald-700/50"></div>
+            <div className="flex-grow h-px bg-cyan-300 dark:bg-cyan-800/50"></div>
+            <span className="mx-3 text-cyan-500 dark:text-cyan-300 text-sm font-medium">or</span>
+            <div className="flex-grow h-px bg-cyan-300 dark:bg-cyan-800/50"></div>
           </div>
 
           {/* Contact Info */}
-          <p className="text-center text-emerald-700 dark:text-emerald-300 text-sm">
+          <p className="text-center text-sky-700 dark:text-cyan-300 text-sm">
             Need quick help?{" "}
             <a
-              href="mailto:support@greennest.com"
-              className="text-emerald-600 dark:text-emerald-200 hover:text-emerald-500 dark:hover:text-emerald-100 hover:underline font-semibold"
+              href="mailto:support@pawmart.com"
+              className="text-cyan-700 dark:text-cyan-200 hover:text-cyan-500 dark:hover:text-cyan-100 hover:underline font-semibold"
             >
-              support@greennest.com
+              support@pawmart.com
             </a>
           </p>
         </fieldset>
