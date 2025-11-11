@@ -24,11 +24,7 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold mb-3 text-emerald-900 dark:text-emerald-50">Quick Links</h3>
           <ul className="space-y-2">
-            <li>
-              <Link to="/about" className="text-emerald-800 dark:text-emerald-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
-                About
-              </Link>
-            </li>
+            
             <li>
               <Link to="/contact" className="text-emerald-800 dark:text-emerald-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition">
                 Contact

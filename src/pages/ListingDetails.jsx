@@ -15,7 +15,7 @@ export default function ListingDetails() {
     fetch(`http://localhost:3000/allList/${id}`)
     .then(res => res.json())
     .then(data => {
-      setListing(data)
+      setListing(data.data)
       
       })
   },[id])
@@ -204,7 +204,7 @@ export default function ListingDetails() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium  text-gray-700 dark:text-gray-50 text-gray-600 dark:text-gray-300">
+                  <label className="block text-sm font-medium  text-gray-700  dark:text-gray-300">
                     Pick Up Date
                   </label>
                     <input

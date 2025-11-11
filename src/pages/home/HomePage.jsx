@@ -9,6 +9,7 @@ import CategorySection from './CategorySection'
 import RecentListing from './RecentListing'
 import AdoptAwareness from './AdoptAwareness'
 import PetHeroes from './PetHeros'
+import Sider from '../../components/Sider'
 
 function HomePage() {
   return (
@@ -17,7 +18,8 @@ function HomePage() {
       <CategorySection />
       <RecentListing />
       <AdoptAwareness />
-      <PetHeroes/>
+      <PetHeroes />
+      
       
     </>
   )

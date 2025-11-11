@@ -50,28 +50,28 @@ export const petHeroes = [
         name: "Nabila Faria",
         role: "Adopter of 'Tigris' (Cat)",
         quote: "Tigris brought so much warmth and fun into our lives. Adopting her was the best decision we ever made!",
-        image: "https://parkofideas.com/ricky/demo/wp-content/uploads/2022/11/ricky-169.jpg" 
+        image: "https://i.ibb.co.com/dwyHf5qf/ricky-172.jpg" 
     },
     {
         id: 2,
-        name: "Salman Khan",
+        name: "Masud Rana",
         role: "Volunteer Caregiver",
         quote: "Seeing the transformation in a rescued dog is incredibly rewarding. Every pet deserves this chance.",
-        image: "/images/heroes/salman_khan.jpg"
+        image: "https://i.ibb.co.com/1YysLkTh/1111111.jpg"
     },
     {
         id: 3,
         name: "Dr. Emon",
         role: "Adopter of 'Buddy' (Dog)",
         quote: "Buddy is our furry best friend. PawMart made the adoption process so easy and supportive.",
-        image: "https://parkofideas.com/ricky/demo/wp-content/uploads/2022/11/ricky-172.jpg"
+        image: "https://i.ibb.co.com/NdCT7cVV/ricky-169.jpg"
     },
     {
         id: 4,
         name: "Jahanara Alom",
         role: "Adopter of 'Buddy' (Dog)",
-        quote: ".",
-        image: "https://parkofideas.com/ricky/demo/wp-content/uploads/2022/11/ricky-168.jpg"
+        quote: " PawMart made the adoption process so easy and supportive. Adopting her was the best decision we ever made!",
+        image: "https://i.ibb.co.com/zhgnC58w/ricky-168.jpg"
     }
     
 ];

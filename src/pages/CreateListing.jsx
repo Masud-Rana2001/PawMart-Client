@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 export default function CreateListing() {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     category: "",
     price: "",
     location: "",
@@ -14,7 +15,8 @@ export default function CreateListing() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  
+  console.log(formData)
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -26,14 +28,16 @@ export default function CreateListing() {
     });
 
     if (res.ok) {
-      toast.success("🌿 Listing created successfully!");
+      toast.success(" Listing created successfully!");
       setFormData({
         name: "",
+        email: "",
         category: "",
         price: "",
         location: "",
         image: "",
         description: "",
+        date : ''
       });
     } else {
       toast.error("❌ Failed to create listing");
@@ -76,17 +80,15 @@ export default function CreateListing() {
             required
           />
         </div>
-
-        {/* Category */}
         <div className="mb-5">
           <label className="block text-sky-700 dark:text-cyan-200 mb-2 font-semibold">
-            Category :
+            Email :
           </label>
           <input
             type="text"
-            name="category"
-            placeholder="Pet / Food / Accessory"
-            value={formData.category}
+            name="email"
+            placeholder="Enter listing name"
+            value={formData.email}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-sky-300 dark:border-cyan-700 
             rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
@@ -96,13 +98,38 @@ export default function CreateListing() {
           />
         </div>
 
+        {/* Category */}
+       <div className="mb-5">
+          <label className="block text-sky-700 dark:text-cyan-200 mb-2 font-semibold">
+            Category :
+          </label>
+
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border border-sky-400 dark:border-cyan-700 
+              rounded-lg bg-white/50 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
+              focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
+            required
+          >
+            <option className="bg-sky-800" value="">-- Select a Category --</option>
+            <option className="bg-sky-800" value="Accessories">Accessories</option>
+            <option className="bg-sky-800" value="Pets (Adoption)">Pets (Adoption)</option>
+            <option className="bg-sky-800" value="Pet Food & Treats">Pet Food & Treats</option>
+            <option className="bg-sky-800" value="Pet Health & Care">Pet Health & Care</option>
+            <option className="bg-sky-800" value="Toys & Play">Toys & Play</option>
+          </select>
+        </div>
+
+
         {/* Price */}
         <div className="mb-5">
           <label className="block text-sky-700 dark:text-cyan-200 mb-2 font-semibold">
             Price :
           </label>
           <input
-            type="number"
+            type="text"
             name="price"
             placeholder="Price in BDT"
             value={formData.price}
@@ -150,6 +177,22 @@ export default function CreateListing() {
             focus:ring-2 focus:ring-cyan-400 transition-all"
           />
         </div>
+          <div>
+            <label className="block text-sky-700 dark:text-cyan-200 mb-2 font-semibold">
+                    Pick Up Date
+                  </label>
+                    <input
+                    name="date"
+                    type="date"
+                    onChange={handleChange}
+                    required
+                    value={formData.date}
+                    className="w-full px-4 py-2 border border-sky-300 dark:border-cyan-700 
+            rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
+            placeholder-sky-400 dark:placeholder-cyan-500 focus:outline-none 
+            focus:ring-2 focus:ring-cyan-400 transition-all"
+                  />
+                </div>
 
         {/* Description */}
         <div className="mb-5">
