@@ -51,6 +51,7 @@ export default function Navbar() {
             { to: "/pets-and-supplies", label: "Pet & Supplies" },
             { to: "/myorders", label: "My Orders" },
             { to: "/mylisting", label: "My Listing" },
+            { to: "/myprofile", label: "My Profile" },
              
             { to: "/contact", label: "Contact" },
             { to: "/privacypolicy", label: "Privacy Policy" },
@@ -166,6 +167,7 @@ export default function Navbar() {
               { to: "/", label: "Home" },
               { to: "/pets-and-supplies", label: "Pet & Supplies" },
               { to: "/myorders", label: "My Orders" },
+              { to: "/myprofile", label: "My Profile" },
               { to: "/contact", label: "Contact" },
               { to: "/mylisting", label: "My Listing" },
               

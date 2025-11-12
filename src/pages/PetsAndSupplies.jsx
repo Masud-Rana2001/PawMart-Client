@@ -1,5 +1,4 @@
-import { useState,useEffect,useRef } from "react";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
 import ListingCard from './home/ListingCard';
 import Loading from "./Loading";
 
@@ -14,7 +13,7 @@ export default function PetsAndSupplies() {
 
   const fetchingData = async (pageNum =1,categoryValue = category,searchValue =searchTerm) => {
    
-    const res = await fetch(`http://localhost:3000/allList?page=${pageNum}&category=${categoryValue}&search=${searchValue}&limit=6`);
+    const res = await fetch(`https://paw-mart-server-one.vercel.app/allList?page=${pageNum}&category=${categoryValue}&search=${searchValue}&limit=6`);
     const data = await res.json();
     if (data.data.length === 0) {
       setHasPage(false)

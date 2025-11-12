@@ -1,7 +1,7 @@
 
-import { Link } from 'react-router';
-import { FaMapMarkerAlt, FaTag, FaHeart } from 'react-icons/fa';
 import { useState } from 'react';
+import { FaHeart, FaMapMarkerAlt, FaTag } from 'react-icons/fa';
+import { Link } from 'react-router';
 import { toast } from 'react-toastify';
 
 
@@ -15,7 +15,7 @@ const ListingCard = ({ listing }) => {
     const handleaddToFav = async () => {
          const token = localStorage.getItem("accessTokenForPawMart");
 
-        const res = await fetch(`http://localhost:3000/fav`, {
+        const res = await fetch(`https://paw-mart-server-one.vercel.app/fav`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

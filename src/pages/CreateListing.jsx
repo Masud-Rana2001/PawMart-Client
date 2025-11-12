@@ -1,4 +1,4 @@
-import { useState,useContext} from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import AuthContext from './../contexts/AuthContext';
 
@@ -23,7 +23,7 @@ export default function CreateListing() {
     e.preventDefault();
 
     // এখানে backend এ POST পাঠাবে
-    const res = await fetch("http://localhost:3000/listings", {
+    const res = await fetch("https://paw-mart-server-one.vercel.app/listings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

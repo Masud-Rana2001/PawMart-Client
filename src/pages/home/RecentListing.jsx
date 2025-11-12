@@ -1,11 +1,11 @@
-import {useState ,useEffect} from 'react'
+import { useEffect, useState } from 'react';
 import ListingCard from './ListingCard';
 
 function RecentListing() {
   const [listing, setListing] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/allListing')
+    fetch('https://paw-mart-server-one.vercel.app/allListing')
       .then(res => res.json())
       .then(data => setListing(data.data))
   },[])

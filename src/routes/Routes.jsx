@@ -21,6 +21,7 @@ import ListingDetails from '../pages/ListingDetails';
 import MyOrders from '../pages/MyOrders';
 import MyListings from '../pages/MyListing';
 import CreateListing from '../pages/CreateListing';
+import MyProfile from '../pages/MyProfile';
 
 
 
@@ -92,6 +93,9 @@ const router = createBrowserRouter([
       }, {
         path: "/createListing",
         element : <CreateListing/>
+      },  {
+        path: "/myprofile",
+        element : <MyProfile/>
       }, 
     ]
   }, {

@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import AuthContext from "./../contexts/AuthContext";
 import Swal from "sweetalert2";
+import AuthContext from "./../contexts/AuthContext";
 
 import { jsPDF } from "jspdf";
-import {autoTable} from "jspdf-autotable";
+import { autoTable } from "jspdf-autotable";
 
 
 
@@ -16,7 +16,7 @@ export default function MyOrders() {
   // Fetch logged-in user's orders
   useEffect(() => {
     if (!currentUser?.email) return;
-    fetch(`http://localhost:3000/orders/${currentUser.email}`, {
+    fetch(`https://paw-mart-server-one.vercel.app/orders/${currentUser.email}`, {
        
       headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
         
@@ -43,7 +43,7 @@ export default function MyOrders() {
           if (!result.isConfirmed)   return
 
     try {
-      const res = await fetch(`http://localhost:3000/orders/${id}`, {
+      const res = await fetch(`https://paw-mart-server-one.vercel.app/orders/${id}`, {
         method: "DELETE",
         // headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
       });

@@ -1,19 +1,17 @@
 import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  updateProfile,
-  sendPasswordResetEmail
+    createUserWithEmailAndPassword,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    updateProfile
 } from "firebase/auth";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import AuthContext from "../contexts/AuthContext";
 import { auth } from "../firebase/firebase.config";
-import { toast } from 'react-toastify';
-import axiosInstance from "../api/axios";
-import axios from 'axios'
 
 
 function AuthProvider({ children }) {
@@ -33,7 +31,7 @@ function AuthProvider({ children }) {
       const token = await result.user.getIdToken();
         // LocalStorage এ সংরক্ষণ
        localStorage.setItem("accessTokenForPawMart", token);
-      // await axios.post("http://localhost:3000/set-token", {}, {
+      // await axios.post("https://paw-mart-server-one.vercel.app/set-token", {}, {
       //  headers: { authorization: `Bearer ${token}` }
       //   });
       toast.success("Sign Up Successful.")

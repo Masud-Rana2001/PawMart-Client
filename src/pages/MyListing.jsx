@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-import AuthContext from "../contexts/AuthContext";
-import { Link } from 'react-router';
-import MyNavlink from "../components/MyNavlink";
 import Swal from "sweetalert2";
+import MyNavlink from "../components/MyNavlink";
+import AuthContext from "../contexts/AuthContext";
 
 export default function MyListings() {
   const { currentUser } = useContext(AuthContext);
@@ -14,7 +13,7 @@ export default function MyListings() {
   // Fetch only user's listings
   useEffect(() => {
     if (!currentUser?.email) return;
-    fetch(`http://localhost:3000/mylisting/${currentUser.email}`, {
+    fetch(`https://paw-mart-server-one.vercel.app/mylisting/${currentUser.email}`, {
       // headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
     })
       .then((res) => res.json())
@@ -36,7 +35,7 @@ export default function MyListings() {
       if (!result.isConfirmed)   return
   
     try {
-      const res = await fetch(`http://localhost:3000/listings/${id}`,
+      const res = await fetch(`https://paw-mart-server-one.vercel.app/listings/${id}`,
         {
           method: "DELETE",
           headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
@@ -66,7 +65,7 @@ export default function MyListings() {
     };
 
     try {
-      const res = await fetch(`http://localhost:3000/listings/${selectedListing._id}`, {
+      const res = await fetch(`https://paw-mart-server-one.vercel.app/listings/${selectedListing._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),

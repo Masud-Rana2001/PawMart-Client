@@ -1,7 +1,7 @@
-import { useRef ,useState,useEffect,useContext} from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useParams } from 'react-router';
-import AuthContext from "../contexts/AuthContext";
 import { toast } from 'react-toastify';
+import AuthContext from "../contexts/AuthContext";
 import Loading from "./Loading";
 
 export default function ListingDetails() {
@@ -12,7 +12,7 @@ export default function ListingDetails() {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/allList/${id}`,  {
+    fetch(`https://paw-mart-server-one.vercel.app/allList/${id}`,  {
       //  headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
         }
     )
@@ -39,7 +39,7 @@ export default function ListingDetails() {
       phone: e.target.phone.value,
       notes :e.target.notes.value
     }
-     fetch("http://localhost:3000/orders", {
+     fetch("https://paw-mart-server-one.vercel.app/orders", {
     method: "POST",
        headers: {
          "Content-Type": "application/json",
