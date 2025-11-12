@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import AuthContext from "../contexts/AuthContext";
 import { Link } from 'react-router';
 import MyNavlink from "../components/MyNavlink";
+import Swal from "sweetalert2";
 
 export default function MyListings() {
   const { currentUser } = useContext(AuthContext);
@@ -13,7 +14,9 @@ export default function MyListings() {
   // Fetch only user's listings
   useEffect(() => {
     if (!currentUser?.email) return;
-    fetch(`http://localhost:3000/mylisting/${currentUser.email}`)
+    fetch(`http://localhost:3000/mylisting/${currentUser.email}`, {
+      // headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
+    })
       .then((res) => res.json())
       .then((data) => setListings(data))
       .catch((err) => console.error("Error fetching listings:", err));
@@ -21,9 +24,23 @@ export default function MyListings() {
 
   // Delete
   const handleDelete = async (id) => {
-    if (!confirm("Are you sure you want to delete this listing?")) return;
+      const result = await Swal.fire({
+      title: "Are you sure you want to delete this listing?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+      });
+      if (!result.isConfirmed)   return
+  
     try {
-      const res = await fetch(`http://localhost:3000/listings/${id}`, { method: "DELETE" });
+      const res = await fetch(`http://localhost:3000/listings/${id}`,
+        {
+          method: "DELETE",
+          headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
+        });
       const data = await res.json();
       if (data.success) {
         toast.success("Listing deleted successfully!");

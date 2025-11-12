@@ -7,11 +7,11 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
 import Loading from './../pages/Loading';
-import PlantDetailts from '../pages/PlantDetailts';
+
 import PrivateRoutes from './PrivateRoutes';
 import PrivateLayout from '../layouts/PrivateLayout';
 
-import MyProfile from './../pages/MyProfile';
+
 import About from './../pages/About';
 import Contact from '../pages/Contact';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
@@ -21,6 +21,7 @@ import ListingDetails from '../pages/ListingDetails';
 import MyOrders from '../pages/MyOrders';
 import MyListings from '../pages/MyListing';
 import CreateListing from '../pages/CreateListing';
+
 
 
 
@@ -91,7 +92,7 @@ const router = createBrowserRouter([
       }, {
         path: "/createListing",
         element : <CreateListing/>
-      }
+      }, 
     ]
   }, {
     path:"*",

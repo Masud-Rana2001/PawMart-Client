@@ -1,13 +1,40 @@
-import React from 'react';
+
 import { Link } from 'react-router';
 import { FaMapMarkerAlt, FaTag, FaHeart } from 'react-icons/fa';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
+
 
 const ListingCard = ({ listing }) => {
+    const [isFav,setIsFav] = useState(false)
     // ক্যাটাগরি "Pets (Adoption)" হলে দাম 0 হবে, অন্যথায় সংখ্যা
     const isAdoption = listing.category === "Pets (Adoption)";
     const priceDisplay = isAdoption ? "Free for Adoption" : `BDT ${listing.price}`;
-    
-    
+
+
+    const handleaddToFav = async () => {
+         const token = localStorage.getItem("accessTokenForPawMart");
+
+        const res = await fetch(`http://localhost:3000/fav`, {
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({ listingId: listing._id }),
+        });
+
+            const data = await res.json();
+            console.log(data)
+            if (data.success) {
+                toast.success("Added to favorites!");
+                setIsFav(true);
+            } else {
+                toast.error(data.message);
+                console.log(data)
+            }
+};
+
 
     return (
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden 
@@ -21,9 +48,9 @@ const ListingCard = ({ listing }) => {
                     loading="lazy" // ইমেজ লোডিং অপটিমাইজেশন
                 />
                 {/* Optional: Wishlist/Favorite Icon */}
-                <button 
-                    className="absolute top-3 right-3 bg-white dark:bg-gray-900 rounded-full p-2 text-gray-500 dark:text-gray-300 
-                               hover:text-red-500 hover:scale-110 transition-transform duration-200 shadow-md"
+                <button onClick={handleaddToFav}
+                    className={`absolute top-3 right-3 bg-white dark:bg-gray-900 rounded-full p-2 text-gray-500 dark:text-gray-300 
+                               hover:text-red-500 ${isFav && 'text-red-500'} hover:scale-110 transition-transform duration-200 shadow-md`}
                     aria-label="Add to favorites"
                 >
                     <FaHeart size={18} />

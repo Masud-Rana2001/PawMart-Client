@@ -1,5 +1,4 @@
 
-import PlantContext from '../contexts/PlantContext'
 import Navbar from './../components/Navbar';
 
 import Footer from './../components/Footer';

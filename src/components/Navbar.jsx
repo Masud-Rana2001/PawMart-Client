@@ -51,7 +51,7 @@ export default function Navbar() {
             { to: "/pets-and-supplies", label: "Pet & Supplies" },
             { to: "/myorders", label: "My Orders" },
             { to: "/mylisting", label: "My Listing" },
-         
+             
             { to: "/contact", label: "Contact" },
             { to: "/privacypolicy", label: "Privacy Policy" },
           ].map((item) => (
@@ -168,6 +168,7 @@ export default function Navbar() {
               { to: "/myorders", label: "My Orders" },
               { to: "/contact", label: "Contact" },
               { to: "/mylisting", label: "My Listing" },
+              
               { to: "/privacypolicy", label: "Privacy Policy" },
             ].map((item) => (
               <MyNavlink

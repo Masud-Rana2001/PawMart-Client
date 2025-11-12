@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 export default function Footer() {
   return (
-    <footer className="w-full mx-auto  bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-400 
+    <footer className="w-full mx-auto border-t border-emerald-200/30 dark:border-emerald-700/50  bg-gradient-to-r from-sky-400 via-cyan-400 to-sky-400 
            dark:from-sky-900 dark:via-sky-950 dark:to-cyan-950 transition-colors duration-300">
       <div className="px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
 

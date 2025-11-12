@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
 import AuthContext from "./../contexts/AuthContext";
+import Swal from "sweetalert2";
 
 import { jsPDF } from "jspdf";
 import {autoTable} from "jspdf-autotable";
@@ -16,9 +17,9 @@ export default function MyOrders() {
   useEffect(() => {
     if (!currentUser?.email) return;
     fetch(`http://localhost:3000/orders/${currentUser.email}`, {
-      // headers: {
-      //   authorization: `Bearer ${localStorage.getItem("token")}`,
-      // },
+       
+      headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
+        
     })
       .then((res) => res.json())
       .then((data) => setOrders(data))
@@ -30,12 +31,21 @@ export default function MyOrders() {
   
   //  Delete order handler
   const handleDeleteOrder = async (id) => {
-    const confirmDelete = confirm("Are you sure you want to delete this order?");
-    if (!confirmDelete) return;
+      const result = await Swal.fire({
+          title: "Are you sure you want to delete this order?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Yes, delete it!",
+          });
+          if (!result.isConfirmed)   return
 
     try {
       const res = await fetch(`http://localhost:3000/orders/${id}`, {
         method: "DELETE",
+        // headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
       });
       const data = await res.json();
 

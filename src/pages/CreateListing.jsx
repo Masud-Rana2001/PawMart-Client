@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState,useContext} from "react";
 import { toast } from "react-toastify";
+import AuthContext from './../contexts/AuthContext';
 
 export default function CreateListing() {
+  const {currentUser} = useContext(AuthContext)
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: currentUser.email,
     category: "",
     price: "",
     location: "",
@@ -23,15 +25,19 @@ export default function CreateListing() {
     // এখানে backend এ POST পাঠাবে
     const res = await fetch("http://localhost:3000/listings", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}`
+      },
       body: JSON.stringify(formData),
+      
     });
 
     if (res.ok) {
       toast.success(" Listing created successfully!");
       setFormData({
         name: "",
-        email: "",
+        email: currentUser.email,
         category: "",
         price: "",
         location: "",
@@ -88,8 +94,8 @@ export default function CreateListing() {
             type="text"
             name="email"
             placeholder="Enter listing name"
-            value={formData.email}
-            onChange={handleChange}
+            readOnly
+            defaultValue={currentUser.email}
             className="w-full px-4 py-2 border border-sky-300 dark:border-cyan-700 
             rounded-lg bg-white/80 dark:bg-sky-950/40 text-sky-900 dark:text-cyan-100 
             placeholder-sky-400 dark:placeholder-cyan-500 focus:outline-none 

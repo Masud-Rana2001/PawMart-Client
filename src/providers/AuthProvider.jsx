@@ -12,6 +12,9 @@ import { useState, useEffect } from "react";
 import AuthContext from "../contexts/AuthContext";
 import { auth } from "../firebase/firebase.config";
 import { toast } from 'react-toastify';
+import axiosInstance from "../api/axios";
+import axios from 'axios'
+
 
 function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
@@ -27,9 +30,15 @@ function AuthProvider({ children }) {
       setIsUserLoading(true);
       const result = await signInWithPopup(auth, googleProvider);
       setCurrentUser(result.user);
+      const token = await result.user.getIdToken();
+        // LocalStorage এ সংরক্ষণ
+       localStorage.setItem("accessTokenForPawMart", token);
+      // await axios.post("http://localhost:3000/set-token", {}, {
+      //  headers: { authorization: `Bearer ${token}` }
+      //   });
       toast.success("Sign Up Successful.")
     } catch (err) {
-      
+      console.log(err.message)
       setUserError(err.message);
       toast.error(err.message)
     } finally {
@@ -59,6 +68,8 @@ function AuthProvider({ children }) {
       setIsUserLoading(true);
       const { user } = await signInWithEmailAndPassword(auth, email, password);
       setCurrentUser(user);
+      const token = await user.getIdToken();
+      localStorage.setItem("accessTokenForPawMart", token);
       toast.success("Sign In Successful.")
     } catch (err) {
       setUserError(err.message);
@@ -69,8 +80,9 @@ function AuthProvider({ children }) {
   };
 
 
-  const logout = () => {
+  const logout = async () => {
     signOut(auth);
+    localStorage.removeItem("accessTokenForPawMart")
     toast.success("Logout Successful.")
   }
 
@@ -111,8 +123,7 @@ function AuthProvider({ children }) {
     return () => unsubscribe();
   }, []);
 
-
-
+ 
 
 
   const value = {

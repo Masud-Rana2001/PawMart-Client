@@ -5,14 +5,17 @@ import { toast } from 'react-toastify';
 import Loading from "./Loading";
 
 export default function ListingDetails() {
+  const { currentUser } = useContext(AuthContext);
   const {id} = useParams()
   const [listing, setListing]  = useState(null)
   const modalRef = useRef(null)
 
-  const { currentUser } = useContext(AuthContext);
- console.log(currentUser)
+
   useEffect(() => {
-    fetch(`http://localhost:3000/allList/${id}`)
+    fetch(`http://localhost:3000/allList/${id}`,  {
+      //  headers: { authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}` }
+        }
+    )
     .then(res => res.json())
     .then(data => {
       setListing(data.data)
@@ -20,7 +23,7 @@ export default function ListingDetails() {
       })
   },[id])
 
-  
+
 
   const handleSubmit =  (e) => {
     e.preventDefault();
@@ -38,7 +41,10 @@ export default function ListingDetails() {
     }
      fetch("http://localhost:3000/orders", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+       headers: {
+         "Content-Type": "application/json",
+          // authorization: `Bearer ${localStorage.getItem("accessTokenForPawMart")}`
+    },
     body: JSON.stringify(data)
      })
        .then(res => res.json())
