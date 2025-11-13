@@ -111,7 +111,7 @@ export default function MyOrders() {
     
   };
 
-   if(orders === null) return <Loading/>
+  
 
 
   return (
@@ -124,7 +124,7 @@ export default function MyOrders() {
         <div className="flex justify-between">
         
                  <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800 dark:text-gray-100">
-                    🧾 My Orders ({orders.length})
+                    🧾 My Orders ({orders?.length})
                    </h2>
           <button
             type="button"
@@ -132,7 +132,9 @@ export default function MyOrders() {
             className="btn btn-primary text-gray-100">Download Report ⬇️</button>
                 </div>
        
-
+        {
+          !orders ? <Loading /> : (
+           
         <div className="overflow-x-auto">
           <table
             className="min-w-full border border-gray-200 dark:border-gray-700 rounded-lg shadow-md 
@@ -215,6 +217,11 @@ export default function MyOrders() {
             </tbody>
           </table>
         </div>
+ 
+          )
+      }
+
+
       </div>
     </div>
   );

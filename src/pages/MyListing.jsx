@@ -88,7 +88,7 @@ export default function MyListings() {
   };
 
 
-    if(listings === null) return <Loading/>
+    
   
 
   return (
@@ -101,10 +101,13 @@ export default function MyListings() {
         <div className="flex justify-between">
 
         <h2 className="text-3xl font-semibold text-center mb-6 text-gray-800 dark:text-gray-100">
-          🐾 My Listings ({listings.length})
+          🐾 My Listings ({listings?.length})
         </h2>
         <MyNavlink className="btn btn-primary" to="/createListing">Create a Listing</MyNavlink>
         </div>
+        {
+          !listings ? <Loading /> : (
+            
 
         <div className="overflow-x-auto">
           <table
@@ -166,7 +169,8 @@ export default function MyListings() {
             </tbody>
           </table>
         </div>
-
+          )
+    }
         {/* 🔹 Update Modal */}
         <dialog id="update_modal" ref={modalRef} className="modal modal-bottom sm:modal-middle">
           <div className="modal-box bg-white dark:bg-gray-900 rounded-xl">
