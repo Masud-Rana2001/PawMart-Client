@@ -6,8 +6,8 @@ The website is fully responsive, supports **dark/light theme**, and includes sec
 ---
 
 ## 🌍 Live Demo
-🔗 [https://pawmart.netlify.app](https://pawmart.netlify.app)  
-🔗 Backend: [https://pawmart-server.vercel.app](https://pawmart-server.vercel.app)
+🔗 [https://paw-martmr.netlify.app/](https://paw-martmr.netlify.app/)  
+🔗 Backend: [https://paw-mart-server-one.vercel.app/](https://paw-mart-server-one.vercel.app/)
 
 ---
 
@@ -63,7 +63,7 @@ npm install
 cd ../PawMart_Server
 npm install
 3️⃣ Create .env files in both:
-VITE_API_URL=https://pawmart-server.vercel.app
+VITE_API_URL=https://paw-mart-server-one.vercel.app/
 VITE_FIREBASE_API_KEY=your_firebase_key
 
 
