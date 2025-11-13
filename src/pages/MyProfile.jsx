@@ -33,10 +33,10 @@ const MyProfile = () => {
             alt="User Avatar"
             className="w-40 h-40 rounded-full border-4 border-cyan-500 shadow-lg"
           />
-          <h2 className="text-3xl font-bold text-cyan-700 dark:text-cyan-300">
+          <h2 className="text-3xl font-bold text-cyan-900 dark:text-cyan-300">
             {currentUser?.displayName || "User Name"}
           </h2>
-          <p className="text-cyan-800/80 dark:text-cyan-100 text-lg">
+          <p className="text-cyan-900 dark:text-cyan-100 text-lg">
             Email: {currentUser?.email}
           </p>
         </div>
@@ -47,7 +47,7 @@ const MyProfile = () => {
 
         {/* ✨ Profile Update Form */}
         <div className="flex-1 md:px-10">
-          <h3 className="text-xl font-semibold mb-4 text-cyan-700 dark:text-cyan-300">
+          <h3 className="text-xl font-semibold mb-4 text-cyan-900 dark:text-cyan-300">
             Update Profile
           </h3>
 
