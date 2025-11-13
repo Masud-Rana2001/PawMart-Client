@@ -3,10 +3,11 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import MyNavlink from "../components/MyNavlink";
 import AuthContext from "../contexts/AuthContext";
+import Loading from "./Loading";
 
 export default function MyListings() {
   const { currentUser } = useContext(AuthContext);
-  const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState(null);
   const [selectedListing, setSelectedListing] = useState(null);
   const modalRef = useRef(null);
 
@@ -85,6 +86,10 @@ export default function MyListings() {
       toast.error("Something went wrong");
     }
   };
+
+
+    if(listings === null) return <Loading/>
+  
 
   return (
     <div
