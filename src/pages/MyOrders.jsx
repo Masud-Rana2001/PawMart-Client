@@ -5,13 +5,14 @@ import AuthContext from "./../contexts/AuthContext";
 
 import { jsPDF } from "jspdf";
 import { autoTable } from "jspdf-autotable";
+import Loading from "./Loading";
 
 
 
 
 export default function MyOrders() {
   const { currentUser } = useContext(AuthContext);
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] = useState(null);
 
   // Fetch logged-in user's orders
   useEffect(() => {
@@ -109,6 +110,8 @@ export default function MyOrders() {
       toast.success("Download successful.");
     
   };
+
+   if(orders === null) return <Loading/>
 
 
   return (
